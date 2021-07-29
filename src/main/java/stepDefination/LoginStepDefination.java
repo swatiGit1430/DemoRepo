@@ -14,13 +14,14 @@ import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import extentReport.ExtentReportsBasicDemo;
 
 
 
-public class LoginStepDefination {
+public class LoginStepDefination extends ExtentReportsBasicDemo  {
 	
 	WebDriver driver;
-	
+
 		
 	@Given("^: User is on Login Page$")
 	public void user_is_on_Login_Page() {
@@ -29,6 +30,8 @@ public class LoginStepDefination {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.freecrm.com");
+		
+		
 	}
 
 	@When("^: Title of page is Free CRM$")
